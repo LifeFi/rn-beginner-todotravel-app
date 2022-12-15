@@ -102,7 +102,9 @@ export default function App() {
         value={text}
         returnKeyType="done"
         placeholder={
-          working ? "What do you have to do?" : "Where do you want to go?"
+          working
+            ? "What do you have to do? (top1)"
+            : "Where do you want to go (top1)?"
         }
         style={styles.input}
       />
