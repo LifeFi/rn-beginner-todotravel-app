@@ -1,0 +1,34 @@
+{
+  "files": {
+    "app.js": "/rn-beginner-todotravel-app/static/js/app.bbeb0301.chunk.js",
+    "app.js.map": "/rn-beginner-todotravel-app/static/js/app.bbeb0301.chunk.js.map",
+    "runtime~app.js": "/rn-beginner-todotravel-app/static/js/runtime~app.0e2168b4.js",
+    "runtime~app.js.map": "/rn-beginner-todotravel-app/static/js/runtime~app.0e2168b4.js.map",
+    "static/js/2.5c2b0ae7.chunk.js": "/rn-beginner-todotravel-app/static/js/2.5c2b0ae7.chunk.js",
+    "static/js/2.5c2b0ae7.chunk.js.map": "/rn-beginner-todotravel-app/static/js/2.5c2b0ae7.chunk.js.map",
+    "fonts/AntDesign.ttf": "/rn-beginner-todotravel-app/./fonts/AntDesign.ttf",
+    "fonts/Entypo.ttf": "/rn-beginner-todotravel-app/./fonts/Entypo.ttf",
+    "fonts/Feather.ttf": "/rn-beginner-todotravel-app/./fonts/Feather.ttf",
+    "fonts/FontAwesome.ttf": "/rn-beginner-todotravel-app/./fonts/FontAwesome.ttf",
+    "fonts/FontAwesome5_Brands.ttf": "/rn-beginner-todotravel-app/./fonts/FontAwesome5_Brands.ttf",
+    "fonts/FontAwesome5_Solid.ttf": "/rn-beginner-todotravel-app/./fonts/FontAwesome5_Solid.ttf",
+    "fonts/Fontisto.ttf": "/rn-beginner-todotravel-app/./fonts/Fontisto.ttf",
+    "fonts/Foundation.ttf": "/rn-beginner-todotravel-app/./fonts/Foundation.ttf",
+    "fonts/Ionicons.ttf": "/rn-beginner-todotravel-app/./fonts/Ionicons.ttf",
+    "fonts/MaterialCommunityIcons.ttf": "/rn-beginner-todotravel-app/./fonts/MaterialCommunityIcons.ttf",
+    "fonts/MaterialIcons.ttf": "/rn-beginner-todotravel-app/./fonts/MaterialIcons.ttf",
+    "fonts/SimpleLineIcons.ttf": "/rn-beginner-todotravel-app/./fonts/SimpleLineIcons.ttf",
+    "favicon-16.png": "/rn-beginner-todotravel-app/favicon-16.png",
+    "favicon-32.png": "/rn-beginner-todotravel-app/favicon-32.png",
+    "favicon.ico": "/rn-beginner-todotravel-app/favicon.ico",
+    "index.html": "/rn-beginner-todotravel-app/index.html",
+    "manifest.json": "/rn-beginner-todotravel-app/manifest.json",
+    "serve.json": "/rn-beginner-todotravel-app/serve.json",
+    "static/js/2.5c2b0ae7.chunk.js.LICENSE.txt": "/rn-beginner-todotravel-app/static/js/2.5c2b0ae7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime~app.0e2168b4.js",
+    "static/js/2.5c2b0ae7.chunk.js",
+    "static/js/app.bbeb0301.chunk.js"
+  ]
+}
