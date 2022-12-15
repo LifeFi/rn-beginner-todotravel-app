@@ -1,0 +1,11 @@
+
+1
+App 시작시, 이전 탭 기억 ( Work, Travel )
+
+2
+완료 값 넣기
+- done : boolean
+- 취소선
+
+3
+text 수정 기능
