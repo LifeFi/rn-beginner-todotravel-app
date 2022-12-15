@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   TextInput,
   ScrollView,
+  Platform,
 } from "react-native";
 import { theme } from "./colors";
 import { Fontisto } from "@expo/vector-icons";
@@ -39,19 +40,29 @@ export default function App() {
   };
 
   const deleteToDo = (key) => {
-    Alert.alert("Delete To Do", "Are you sure?", [
-      { text: "Cancel" },
-      {
-        text: "I'm Sure",
-        style: "destructive",
-        onPress: () => {
-          const newToDos = { ...toDos };
-          delete newToDos[key];
-          setToDos(newToDos);
-          saveToDos(newToDos);
+    if (Platform.OS === "web") {
+      const ok = confirm("Do you want to delete this To Do?");
+      if (ok) {
+        const newToDos = { ...toDos };
+        delete newToDos[key];
+        setToDos(newToDos);
+        saveToDos(newToDos);
+      }
+    } else {
+      Alert.alert("Delete To Do", "Are you sure?", [
+        { text: "Cancel" },
+        {
+          text: "I'm Sure",
+          style: "destructive",
+          onPress: () => {
+            const newToDos = { ...toDos };
+            delete newToDos[key];
+            setToDos(newToDos);
+            saveToDos(newToDos);
+          },
         },
-      },
-    ]);
+      ]);
+    }
   };
 
   const addToDo = async () => {
