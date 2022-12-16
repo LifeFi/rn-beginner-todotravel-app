@@ -16,18 +16,55 @@ import { Fontisto } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const STORAGE_KEY = "@toDos";
+const STORAGE_SETTINGS_KEY = "@settings";
 
 export default function App() {
+  const [settings, setSettings] = useState({});
   const [working, setWorking] = useState(true);
   const [text, setText] = useState("");
   const [toDos, setToDos] = useState({});
+
+  useEffect(() => {
+    loadSettings();
+  }, []);
+
   useEffect(() => {
     loadToDos();
   }, []);
 
-  const travel = () => setWorking(false);
-  const work = () => setWorking(true);
+  const travel = () => {
+    setWorking(false);
+    setSettings({ working: false });
+    saveSettings({ working: false });
+  };
+
+  const work = () => {
+    setWorking(true);
+    setSettings({ working: true });
+    saveSettings({ working: true });
+  };
+
   const onChangeText = (payload) => setText(payload);
+
+  const saveSettings = async (toSave) => {
+    await AsyncStorage.setItem(STORAGE_SETTINGS_KEY, JSON.stringify(toSave));
+  };
+
+  const loadSettings = async () => {
+    const s = await AsyncStorage.getItem(STORAGE_SETTINGS_KEY);
+    const json = JSON.parse(s);
+
+    if (json) {
+      setSettings(json);
+      setWorking(json.working);
+    } else {
+      null;
+    }
+  };
+
+  const clearAll = async () => {
+    AsyncStorage.clear();
+  };
 
   const saveToDos = async (toSave) => {
     await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
@@ -35,7 +72,6 @@ export default function App() {
 
   const loadToDos = async () => {
     const s = await AsyncStorage.getItem(STORAGE_KEY);
-
     s ? setToDos(JSON.parse(s)) : null;
   };
 
@@ -69,7 +105,6 @@ export default function App() {
     if (text === "") {
       return;
     }
-
     // 해시맵, Date.now() 를 [] 으로 감싼 것은, KEY 값이기 때문이다.
     // 해시맵이 배열(array)보다 훨씬 빠르다고 한다. ( 선형 탐색이 아니기 때문에 )
     // const newToDos = Object.assign({}, toDos, {
@@ -119,6 +154,10 @@ export default function App() {
         }
         style={styles.input}
       />
+      <TouchableOpacity onPress={clearAll}>
+        <Text style={{ color: "red", textAlign: "right" }}>CLEAR ALL</Text>
+      </TouchableOpacity>
+
       <ScrollView>
         {Object.keys(toDos).map((key) =>
           toDos[key].working === working ? (
